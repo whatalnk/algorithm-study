@@ -10,16 +10,11 @@ class IntPerm
       eval_perm()
     else
       (i...(@mData.length)).each do |j|
-        swap(i, j)
+        @mData[i], @mData[j] = @mData[j], @mData[i]
         _perm(i + 1)
-        swap(i, j)
+        @mData[i], @mData[j] = @mData[j], @mData[i]
       end
     end
-  end
-  def swap(i, j)
-    temp = @mData[i]
-    @mData[i] = @mData[j]
-    @mData[j] = temp
   end
   def eval_perm()
     ret = []
