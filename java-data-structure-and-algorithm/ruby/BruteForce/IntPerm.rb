@@ -7,7 +7,7 @@ class IntPerm
   end
   def _perm(i)
     if (i == @mData.length) then
-      eval_perm()
+      _eval()
     else
       (i...(@mData.length)).each do |j|
         @mData[i], @mData[j] = @mData[j], @mData[i]
@@ -16,7 +16,7 @@ class IntPerm
       end
     end
   end
-  def eval_perm()
+  def _eval()
     ret = []
     (0...(@mData.length)).each do |i|
       ret << @mData[i]
