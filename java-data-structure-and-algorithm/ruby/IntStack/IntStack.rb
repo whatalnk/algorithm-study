@@ -19,12 +19,27 @@ class IntStack
     @top += 1
     return x
   end
+
+  def _pop()
+    if @top <= 0 then
+      raise RangeError
+    end
+    @top -= 1
+    ret = @data[@top]
+    @data[@top] = nil
+    return ret
+  end
 end
 
 if $0 == __FILE__
   intStack = IntStack.new(10)
-  11.times do |i|
+  p intStack.data
+  10.times do |i|
     intStack._push(i)
+    p intStack.data
+  end
+ 11.times do
+    intStack._pop()
     p intStack.data
   end
 end
